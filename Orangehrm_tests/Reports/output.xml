@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.13.0 on win32)" generated="2025-01-19T15:19:39.462421" rpa="false" schemaversion="5">
+<suite id="s1" name="Login Tests" source="C:\Users\Arley\Desktop\Praticando QA - Robot\PROJETOS\orangehrm-qa-portfolio\Orangehrm_tests\tests\login_tests.robot">
+<test id="s1-t1" name="CT001-001-Login válido" line="9">
+<kw name="Abrir o navegador" owner="orangehrm_resources" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-01-19T15:19:39.677319" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<arg>${LOGIN_URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-01-19T15:19:39.677165" elapsed="3.293532"/>
+</kw>
+<status status="PASS" start="2025-01-19T15:19:39.676676" elapsed="3.294182"/>
+</kw>
+<kw name="Dado que o usuário está na tela de login" owner="orangehrm_resources">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-01-19T15:19:42.971587" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'</msg>
+<arg>${LOGIN_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-01-19T15:19:42.971457" elapsed="0.310429"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-01-19T15:19:43.282044" elapsed="0.018212"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-01-19T15:19:43.300436" elapsed="0.243094"/>
+</kw>
+<status status="PASS" start="2025-01-19T15:19:42.971191" elapsed="0.572457"/>
+</kw>
+<kw name="Quando insere usuário corretamente no campo &quot;Username&quot;" owner="orangehrm_resources">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-19T15:19:43.544393" level="INFO">Typing text 'Admin' into text field '//input[contains(@name,'username')]'.</msg>
+<arg>${CAMPO_USUARIO}</arg>
+<arg>${USUARIO_VALIDO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-19T15:19:43.544202" elapsed="0.057638"/>
+</kw>
+<status status="PASS" start="2025-01-19T15:19:43.543942" elapsed="0.058011"/>
+</kw>
+<kw name="E insere senha corretamente no campo &quot;Password&quot;" owner="orangehrm_resources">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-19T15:19:43.602703" level="INFO">Typing text 'admin123' into text field '//input[contains(@type,'password')]'.</msg>
+<arg>${CAMPO_SENHA}</arg>
+<arg>${SENHA_VALIDA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-19T15:19:43.602494" elapsed="0.066425"/>
+</kw>
+<status status="PASS" start="2025-01-19T15:19:43.602233" elapsed="0.066799"/>
+</kw>
+<kw name="E clica no botão &quot;Login&quot;" owner="orangehrm_resources">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-01-19T15:19:43.669756" level="INFO">Clicking button '//button[@type='submit'][contains(.,'Login')]'.</msg>
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-19T15:19:43.669588" elapsed="0.050784"/>
+</kw>
+<status status="PASS" start="2025-01-19T15:19:43.669323" elapsed="0.051197"/>
+</kw>
+<kw name="Então é redirecionado para a página inicial do sistema" owner="orangehrm_resources">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PAGINA_INICIAL}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-19T15:19:43.721094" elapsed="1.382767"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-19T15:19:48.104341" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-19T15:19:45.104018" elapsed="3.000433"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-01-19T15:19:48.258796" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Reports/login_sucesso.png"&gt;&lt;img src="Reports/login_sucesso.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>Reports/login_sucesso.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-01-19T15:19:48.104623" elapsed="0.154271"/>
+</kw>
+<status status="PASS" start="2025-01-19T15:19:43.720841" elapsed="4.538141"/>
+</kw>
+<kw name="Fechar o navegador" owner="orangehrm_resources" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-01-19T15:19:48.259616" elapsed="2.133114"/>
+</kw>
+<status status="PASS" start="2025-01-19T15:19:48.259370" elapsed="2.133517"/>
+</kw>
+<doc>Validar login com credencias preenchidas corretamente</doc>
+<tag>login</tag>
+<status status="PASS" start="2025-01-19T15:19:39.676046" elapsed="10.717034"/>
+</test>
+<test id="s1-t2" name=" CT001-002-Login com senha inválida" line="18">
+<kw name="Abrir o navegador" owner="orangehrm_resources" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-01-19T15:19:50.394491" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<arg>${LOGIN_URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-01-19T15:19:50.394328" elapsed="3.103986"/>
+</kw>
+<status status="PASS" start="2025-01-19T15:19:50.394105" elapsed="3.104335"/>
+</kw>
+<kw name="Dado que o usuário está na tela de login" owner="orangehrm_resources">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-01-19T15:19:53.499151" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'</msg>
+<arg>${LOGIN_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-01-19T15:19:53.499034" elapsed="0.332425"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-01-19T15:19:53.831684" elapsed="0.027414"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-01-19T15:19:53.859317" elapsed="0.231667"/>
+</kw>
+<status status="PASS" start="2025-01-19T15:19:53.498765" elapsed="0.592332"/>
+</kw>
+<kw name="Quando insere usuário corretamente no campo &quot;Username&quot;" owner="orangehrm_resources">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-19T15:19:54.091795" level="INFO">Typing text 'Admin' into text field '//input[contains(@name,'username')]'.</msg>
+<arg>${CAMPO_USUARIO}</arg>
+<arg>${USUARIO_VALIDO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-19T15:19:54.091630" elapsed="0.056773"/>
+</kw>
+<status status="PASS" start="2025-01-19T15:19:54.091404" elapsed="0.057108"/>
+</kw>
+<kw name="E insere senha inválida no campo &quot;Password&quot;" owner="orangehrm_resources">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-19T15:19:54.149158" level="INFO">Typing text 'senha_invalida' into text field '//input[contains(@type,'password')]'.</msg>
+<arg>${CAMPO_SENHA}</arg>
+<arg>${SENHA_INVALIDA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-19T15:19:54.148997" elapsed="0.078420"/>
+</kw>
+<status status="PASS" start="2025-01-19T15:19:54.148784" elapsed="0.078741"/>
+</kw>
+<kw name="E clica no botão &quot;Login&quot;" owner="orangehrm_resources">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-01-19T15:19:54.228351" level="INFO">Clicking button '//button[@type='submit'][contains(.,'Login')]'.</msg>
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-19T15:19:54.228200" elapsed="0.055024"/>
+</kw>
+<status status="PASS" start="2025-01-19T15:19:54.227976" elapsed="0.055393"/>
+</kw>
+<kw name="Então sistema exibe mensagem de erro &quot;Invalid credentials&quot;" owner="orangehrm_resources">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${CREDENCIAIS_INVALIDAS}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-01-19T15:19:54.284032" elapsed="1.308927"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-19T15:19:57.593322" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-19T15:19:55.593114" elapsed="2.000317"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-01-19T15:19:57.726159" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Reports/login_senha_invalida.png"&gt;&lt;img src="Reports/login_senha_invalida.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>Reports/login_senha_invalida.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-01-19T15:19:57.593605" elapsed="0.132663"/>
+</kw>
+<status status="PASS" start="2025-01-19T15:19:54.283724" elapsed="3.442637"/>
+</kw>
+<kw name="Fechar o navegador" owner="orangehrm_resources" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-01-19T15:19:57.726929" elapsed="2.119939"/>
+</kw>
+<status status="PASS" start="2025-01-19T15:19:57.726698" elapsed="2.120305"/>
+</kw>
+<doc>Validar mensagem de erro ao utilizar uma senha inválida</doc>
+<tag>login</tag>
+<status status="PASS" start="2025-01-19T15:19:50.393716" elapsed="9.453456"/>
+</test>
+<test id="s1-t3" name=" CT001-003-Login com usuário inválido" line="27">
+<kw name="Abrir o navegador" owner="orangehrm_resources" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-01-19T15:19:59.848415" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<arg>${LOGIN_URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-01-19T15:19:59.848283" elapsed="3.131838"/>
+</kw>
+<status status="PASS" start="2025-01-19T15:19:59.848088" elapsed="3.132152"/>
+</kw>
+<kw name="Dado que o usuário está na tela de login" owner="orangehrm_resources">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-01-19T15:20:02.980865" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'</msg>
+<arg>${LOGIN_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-01-19T15:20:02.980768" elapsed="0.312620"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-01-19T15:20:03.293550" elapsed="0.023906"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-01-19T15:20:03.317618" elapsed="0.236070"/>
+</kw>
+<status status="PASS" start="2025-01-19T15:20:02.980550" elapsed="0.573255"/>
+</kw>
+<kw name="Quando insere usuário inválido no campo &quot;Username&quot;" owner="orangehrm_resources">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-19T15:20:03.554495" level="INFO">Typing text 'usuario_invalido' into text field '//input[contains(@name,'username')]'.</msg>
+<arg>${CAMPO_USUARIO}</arg>
+<arg>${USUARIO_INVALIDO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-19T15:20:03.554329" elapsed="0.078883"/>
+</kw>
+<status status="PASS" start="2025-01-19T15:20:03.554100" elapsed="0.079226"/>
+</kw>
+<kw name="E insere senha corretamente no campo &quot;Password&quot;" owner="orangehrm_resources">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-19T15:20:03.634500" level="INFO">Typing text 'admin123' into text field '//input[contains(@type,'password')]'.</msg>
+<arg>${CAMPO_SENHA}</arg>
+<arg>${SENHA_VALIDA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-19T15:20:03.634044" elapsed="0.066702"/>
+</kw>
+<status status="PASS" start="2025-01-19T15:20:03.633674" elapsed="0.067178"/>
+</kw>
+<kw name="E clica no botão &quot;Login&quot;" owner="orangehrm_resources">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-01-19T15:20:03.701477" level="INFO">Clicking button '//button[@type='submit'][contains(.,'Login')]'.</msg>
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-19T15:20:03.701329" elapsed="0.054061"/>
+</kw>
+<status status="PASS" start="2025-01-19T15:20:03.701113" elapsed="0.054393"/>
+</kw>
+<kw name="Então sistema exibe mensagem de erro &quot;Invalid credentials&quot;" owner="orangehrm_resources">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${CREDENCIAIS_INVALIDAS}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-01-19T15:20:03.756133" elapsed="1.029783"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-19T15:20:06.786250" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-19T15:20:04.786068" elapsed="2.000293"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-01-19T15:20:06.916587" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Reports/login_senha_invalida.png"&gt;&lt;img src="Reports/login_senha_invalida.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>Reports/login_senha_invalida.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-01-19T15:20:06.786529" elapsed="0.130160"/>
+</kw>
+<status status="PASS" start="2025-01-19T15:20:03.755860" elapsed="3.160920"/>
+</kw>
+<kw name="Fechar o navegador" owner="orangehrm_resources" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-01-19T15:20:06.917290" elapsed="2.125569"/>
+</kw>
+<status status="PASS" start="2025-01-19T15:20:06.917095" elapsed="2.125894"/>
+</kw>
+<doc>Validar mensagem de erro ao utilizar um usuário inválido</doc>
+<tag>login</tag>
+<status status="PASS" start="2025-01-19T15:19:59.847736" elapsed="9.195412"/>
+</test>
+<test id="s1-t4" name=" CT001-004-Login com campos vazios" line="36">
+<kw name="Abrir o navegador" owner="orangehrm_resources" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-01-19T15:20:09.044301" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<arg>${LOGIN_URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-01-19T15:20:09.044164" elapsed="3.096774"/>
+</kw>
+<status status="PASS" start="2025-01-19T15:20:09.043965" elapsed="3.097090"/>
+</kw>
+<kw name="Dado que o usuário está na tela de login" owner="orangehrm_resources">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-01-19T15:20:12.141680" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'</msg>
+<arg>${LOGIN_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-01-19T15:20:12.141577" elapsed="0.308401"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-01-19T15:20:12.450136" elapsed="0.021755"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-01-19T15:20:12.472063" elapsed="0.253012"/>
+</kw>
+<status status="PASS" start="2025-01-19T15:20:12.141348" elapsed="0.583832"/>
+</kw>
+<kw name="Quando usuário não preenche o campo &quot;Username&quot;" owner="orangehrm_resources">
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${CAMPO_USUARIO}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-19T15:20:12.725736" elapsed="0.030017"/>
+</kw>
+<status status="PASS" start="2025-01-19T15:20:12.725481" elapsed="0.030385"/>
+</kw>
+<kw name="E não preenche o campo &quot;Password&quot;" owner="orangehrm_resources">
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${CAMPO_SENHA}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-19T15:20:12.756440" elapsed="0.024177"/>
+</kw>
+<status status="PASS" start="2025-01-19T15:20:12.756186" elapsed="0.024547"/>
+</kw>
+<kw name="E clica no botão &quot;Login&quot;" owner="orangehrm_resources">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-01-19T15:20:12.781445" level="INFO">Clicking button '//button[@type='submit'][contains(.,'Login')]'.</msg>
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-19T15:20:12.781287" elapsed="0.057011"/>
+</kw>
+<status status="PASS" start="2025-01-19T15:20:12.781047" elapsed="0.057411"/>
+</kw>
+<kw name="Então sistema exibe mensagem de erro &quot;Required&quot; abaixo dos dois campos" owner="orangehrm_resources">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ERRO_CREDENCIAL_REQUIRED}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-19T15:20:12.839142" elapsed="0.017184"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-19T15:20:14.856879" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-19T15:20:12.856579" elapsed="2.000411"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-01-19T15:20:14.986316" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Reports/login_usuario_senha_obrigatorios.png"&gt;&lt;img src="Reports/login_usuario_senha_obrigatorios.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>Reports/login_usuario_senha_obrigatorios.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-01-19T15:20:14.857163" elapsed="0.129245"/>
+</kw>
+<status status="PASS" start="2025-01-19T15:20:12.838841" elapsed="2.147660"/>
+</kw>
+<kw name="Fechar o navegador" owner="orangehrm_resources" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-01-19T15:20:14.987058" elapsed="2.087521"/>
+</kw>
+<status status="PASS" start="2025-01-19T15:20:14.986834" elapsed="2.087881"/>
+</kw>
+<doc>Validar mensagem de erro de preenchimento obrigatório</doc>
+<tag>login</tag>
+<status status="PASS" start="2025-01-19T15:20:09.043645" elapsed="8.031231"/>
+</test>
+<test id="s1-t5" name="CT001-005-Login com usuário válido e senha vazia" line="45">
+<kw name="Abrir o navegador" owner="orangehrm_resources" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-01-19T15:20:17.076089" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<arg>${LOGIN_URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-01-19T15:20:17.075956" elapsed="3.090678"/>
+</kw>
+<status status="PASS" start="2025-01-19T15:20:17.075765" elapsed="3.090987"/>
+</kw>
+<kw name="Dado que o usuário está na tela de login" owner="orangehrm_resources">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-01-19T15:20:20.167403" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'</msg>
+<arg>${LOGIN_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-01-19T15:20:20.167284" elapsed="0.308022"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-01-19T15:20:20.475477" elapsed="0.021251"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-01-19T15:20:20.496885" elapsed="0.234132"/>
+</kw>
+<status status="PASS" start="2025-01-19T15:20:20.167053" elapsed="0.564064"/>
+</kw>
+<kw name="Quando insere usuário corretamente no campo &quot;Username&quot;" owner="orangehrm_resources">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-19T15:20:20.731859" level="INFO">Typing text 'Admin' into text field '//input[contains(@name,'username')]'.</msg>
+<arg>${CAMPO_USUARIO}</arg>
+<arg>${USUARIO_VALIDO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-19T15:20:20.731667" elapsed="0.056784"/>
+</kw>
+<status status="PASS" start="2025-01-19T15:20:20.731408" elapsed="0.057156"/>
+</kw>
+<kw name="E não preenche o campo &quot;Password&quot;" owner="orangehrm_resources">
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${CAMPO_SENHA}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-19T15:20:20.789091" elapsed="0.021810"/>
+</kw>
+<status status="PASS" start="2025-01-19T15:20:20.788829" elapsed="0.022175"/>
+</kw>
+<kw name="E clica no botão &quot;Login&quot;" owner="orangehrm_resources">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-01-19T15:20:20.811649" level="INFO">Clicking button '//button[@type='submit'][contains(.,'Login')]'.</msg>
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-19T15:20:20.811489" elapsed="0.048363"/>
+</kw>
+<status status="PASS" start="2025-01-19T15:20:20.811262" elapsed="0.048693"/>
+</kw>
+<kw name="Então sistema exibe mensagem de erro &quot;Required&quot; abaixo do campo &quot;Password&quot;" owner="orangehrm_resources">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ERRO_CREDENCIAL_REQUIRED}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-19T15:20:20.860450" elapsed="0.013795"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-19T15:20:22.874647" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-19T15:20:20.874412" elapsed="2.000343"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-01-19T15:20:23.013530" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Reports/login_senha_obrigatoria.png"&gt;&lt;img src="Reports/login_senha_obrigatoria.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>Reports/login_senha_obrigatoria.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-01-19T15:20:22.874926" elapsed="0.138696"/>
+</kw>
+<status status="PASS" start="2025-01-19T15:20:20.860218" elapsed="2.153555"/>
+</kw>
+<kw name="Fechar o navegador" owner="orangehrm_resources" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-01-19T15:20:23.014242" elapsed="2.114194"/>
+</kw>
+<status status="PASS" start="2025-01-19T15:20:23.014048" elapsed="2.114522"/>
+</kw>
+<doc>Validar a exibição de erro ao tentar logar sem preencher campo senha</doc>
+<tag>login</tag>
+<status status="PASS" start="2025-01-19T15:20:17.075400" elapsed="8.053362"/>
+</test>
+<test id="s1-t6" name="CT001-006-Login com usuário vazio e senha válida" line="54">
+<kw name="Abrir o navegador" owner="orangehrm_resources" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-01-19T15:20:25.129985" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<arg>${LOGIN_URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-01-19T15:20:25.129853" elapsed="3.096799"/>
+</kw>
+<status status="PASS" start="2025-01-19T15:20:25.129652" elapsed="3.097119"/>
+</kw>
+<kw name="Dado que o usuário está na tela de login" owner="orangehrm_resources">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-01-19T15:20:28.227482" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'</msg>
+<arg>${LOGIN_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-01-19T15:20:28.227354" elapsed="0.337665"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-01-19T15:20:28.565176" elapsed="0.031969"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-01-19T15:20:28.597303" elapsed="0.224950"/>
+</kw>
+<status status="PASS" start="2025-01-19T15:20:28.227098" elapsed="0.595268"/>
+</kw>
+<kw name="Quando usuário não preenche o campo &quot;Username&quot;" owner="orangehrm_resources">
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${CAMPO_USUARIO}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-19T15:20:28.822893" elapsed="0.028689"/>
+</kw>
+<status status="PASS" start="2025-01-19T15:20:28.822650" elapsed="0.029047"/>
+</kw>
+<kw name="E insere senha corretamente no campo &quot;Password&quot;" owner="orangehrm_resources">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-19T15:20:28.852426" level="INFO">Typing text 'admin123' into text field '//input[contains(@type,'password')]'.</msg>
+<arg>${CAMPO_SENHA}</arg>
+<arg>${SENHA_VALIDA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-19T15:20:28.852241" elapsed="0.087952"/>
+</kw>
+<status status="PASS" start="2025-01-19T15:20:28.852000" elapsed="0.088300"/>
+</kw>
+<kw name="E clica no botão &quot;Login&quot;" owner="orangehrm_resources">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-01-19T15:20:28.940887" level="INFO">Clicking button '//button[@type='submit'][contains(.,'Login')]'.</msg>
+<arg>${BOTAO_LOGIN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-19T15:20:28.940745" elapsed="0.051848"/>
+</kw>
+<status status="PASS" start="2025-01-19T15:20:28.940547" elapsed="0.052152"/>
+</kw>
+<kw name=" Então sistema exibe mensagem de erro &quot;Required&quot; abaixo do campo &quot;Username&quot;" owner="orangehrm_resources">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ERRO_CREDENCIAL_REQUIRED}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-01-19T15:20:28.993274" elapsed="0.014470"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-01-19T15:20:31.008264" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-01-19T15:20:29.007928" elapsed="2.000444"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-01-19T15:20:31.153516" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Reports/login_usuario_obrigatorio.png"&gt;&lt;img src="Reports/login_usuario_obrigatorio.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>Reports/login_usuario_obrigatorio.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-01-19T15:20:31.008547" elapsed="0.145061"/>
+</kw>
+<status status="PASS" start="2025-01-19T15:20:28.993005" elapsed="2.160685"/>
+</kw>
+<kw name="Fechar o navegador" owner="orangehrm_resources" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-01-19T15:20:31.154235" elapsed="2.103255"/>
+</kw>
+<status status="PASS" start="2025-01-19T15:20:31.154037" elapsed="2.103577"/>
+</kw>
+<doc>Validar a exibição de erro ao tentar logar sem preencher campo usuário</doc>
+<tag>login</tag>
+<status status="PASS" start="2025-01-19T15:20:25.129250" elapsed="8.128515"/>
+</test>
+<status status="PASS" start="2025-01-19T15:19:39.463580" elapsed="53.794857"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="6" fail="0" skip="0">login</stat>
+</tag>
+<suite>
+<stat pass="6" fail="0" skip="0" id="s1" name="Login Tests">Login Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
